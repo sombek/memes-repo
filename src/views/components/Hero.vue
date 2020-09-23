@@ -8,7 +8,8 @@
                     memes-repo.com
                 </h6>
                 <div style="">
-                    <base-button size="sm" type="primary">
+                    <base-button size="sm" type="primary"
+                                 @click="openTwitter()">
                         <i class="fa fa-twitter"></i>
                         المشاركة عبر
                     </base-button>
@@ -16,7 +17,7 @@
             </div>
         </div>
 
-        <div class="container" style="color: #345;margin-top: 80px">
+        <div class="container" style="color: #345">
             <div class="col px-0">
 
                 <div class="row justify-content-center align-items-center">
@@ -128,6 +129,11 @@ export default {
 				modal2: false,
 				modal3: false
 			}
+		}
+	},
+	methods: {
+		openTwitter() {
+			window.open('https://twitter.com/intent/tweet?url=https%3A%2F%2Fmemes-repo.com%2F&text=%D8%AC%D8%B1%D8%A8%D9%88%20%D8%AA%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%88%20%D9%85%D8%AE%D8%B2%D9%86%20%D8%A7%D9%84%D9%85%D9%8A%D9%85%D8%B2%20%D8%B9%D8%B4%D8%A7%D9%86%20%D8%AA%D9%84%D9%82%D9%88%20%D8%A7%D9%84%D9%85%D9%8A%D9%85%D8%B2%20%D8%AD%D9%82%D8%AA%D9%83%D9%85%20%D8%AF%D8%A7%D8%A6%D9%85%D8%A7')
 		}
 	}
 }

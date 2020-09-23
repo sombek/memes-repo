@@ -5,7 +5,7 @@
                 <div class="col-lg-6 text-lg-center btn-wrapper">
 
 
-                    <a target="_blank" rel="noopener" href="https://twitter.com/creativetim"
+                    <a target="_blank" rel="noopener" href="https://twitter.com/abdullahjsx"
                        class="btn btn-neutral btn-twitter btn-round btn-lg" data-toggle="tooltip"
                        data-original-title="Follow us">
                         حسابي في تويتر
