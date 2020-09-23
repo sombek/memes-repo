@@ -18,6 +18,11 @@
 
         <div class="container" style="color: #345;margin-top: 80px">
             <div class="col px-0">
+
+                <div class="row justify-content-center align-items-center">
+                    <img v-lazy="'img/pixel.gif'" style="height: 180px">
+                </div>
+
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-7 text-center">
                         <h1 style=" background: url(https://www.onlygfx.com/wp-content/uploads/2019/03/14-white-grunge-brush-stroke-13.png);
@@ -59,7 +64,8 @@
                     <div class="py-3 text-center" style="direction: rtl">
                         <i class="ni ni-bell-55 ni-3x"></i>
 
-                        <h3 style="font-weight: bold;font-size: 16pt" class="heading mt-4">عشان تنسخ الميم و تستخدمه في تويتر</h3>
+                        <h3 style="font-weight: bold;font-size: 16pt" class="heading mt-4">عشان تنسخ الميم و تستخدمه في
+                            تويتر</h3>
 
                         <br>
 
@@ -69,9 +75,11 @@
                         <p style="text-align: right">
                             2. اضغط على نسخ او copy
                         </p>
+                        <img v-lazy="'img/1.jpg'" style="width: 250px" alt="">
                         <p style="text-align: right">
                             3. سوي لصق في التغريدة المناسبة
                         </p>
+                        <img v-lazy="'img/2.jpg'" style="width: 250px">
                         <p style="text-align: right">
                             4. انبسط
                         </p>
@@ -82,7 +90,8 @@
 
                         <base-button type="white" style="direction: rtl" @click="modals.modal2 = false">
 
-                            اوكي فهمت...</base-button>
+                            اوكي فهمت...
+                        </base-button>
 
                         <base-button type="link"
                                      text-color="white"
@@ -100,28 +109,28 @@
     </section>
 </template>
 <script>
-    import {VBTooltip} from "bootstrap-vue/esm/directives/tooltip/tooltip";
-    import {VBPopover} from "bootstrap-vue/esm/directives/popover/popover";
-    import Modal from "@/components/Modal.vue";
+import {VBTooltip} from 'bootstrap-vue/esm/directives/tooltip/tooltip'
+import {VBPopover} from 'bootstrap-vue/esm/directives/popover/popover'
+import Modal from '@/components/Modal.vue'
 
-    export default {
-        components: {
-            Modal
-        },
-        directives: {
-            BTooltip: VBTooltip,
-            BPopover: VBPopover,
-        },
-        data() {
-            return {
-                modals: {
-                    modal1: false,
-                    modal2: false,
-                    modal3: false
-                }
-            };
-        }
-    };
+export default {
+	components: {
+		Modal
+	},
+	directives: {
+		BTooltip: VBTooltip,
+		BPopover: VBPopover,
+	},
+	data() {
+		return {
+			modals: {
+				modal1: false,
+				modal2: false,
+				modal3: false
+			}
+		}
+	}
+}
 </script>
 <style>
 </style>

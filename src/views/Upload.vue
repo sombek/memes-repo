@@ -100,46 +100,45 @@
     </section>
 </template>
 <script>
-	// import xmlToJSON from 'src/assets/xml2json'
+// import xmlToJSON from 'src/assets/xml2json'
 
-	const axios = import('axios');
+import Axios from 'axios'
 
-	export default {
-        data() {
-            return {
-                files: []
-            }
-        },
-        methods: {
-            async upload(event) {
-                this.files = [];
-                for (let file of event.target.files) {
-                    try {
-                        let reader = new FileReader();
-                        reader.readAsDataURL(file); // Not sure if this will work in this context.
-                        reader.onload = () => {
-                            this.files.push({
-                                blob: file,
-                                preview: reader.result,
-                                title: '',
-                                category: ''
-                            });
-                        }
-                    } catch {
-                    }
-                }
-            },
-            send() {
-				axios.then((axi) => {
-					axi.post('http://localhost:3000/upload',this.files).then(x => {
-						console.log(x)
-					})
-				});
-                console.log(this.files)
+export default {
+	data() {
+		return {
+			files: []
+		}
+	},
+	methods: {
+		upload(event) {
+			this.files = []
+			for (let file of event.target.files) {
+				try {
+					let reader = new FileReader()
+					reader.readAsDataURL(file) // Not sure if this will work in this context.
+					reader.onload = () => {
+						this.files.push({
+							blob: file,
+							preview: reader.result,
+							title: '',
+							category: ''
+						})
+					}
+				} catch(e) {
+					console.error()
+				}
+			}
+		},
+		send() {
+			Axios.post('http://localhost:3000/upload', this.files).then(x => {
+				console.log(x)
+			})
+			console.log(this.files)
 
-            }
-        }
-    };
+		}
+	}
+}
 </script>
 <style>
 </style>
