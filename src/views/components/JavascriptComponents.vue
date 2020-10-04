@@ -32,7 +32,8 @@ export default {
 			images.sort(function(x, y) {
 				return new Date(y.LastModified[0]._text).getTime() - new Date(x.LastModified[0]._text).getTime()
 			})
-			images = images.map(c => baseUrl + c.Key[0]._text)
+			images = images.map(c => c.Key[0]._text.includes('memes') ? baseUrl + c.Key[0]._text : false)
+			images= images.filter(c => c)
 			this.images = images
 		})
 
@@ -64,7 +65,7 @@ export default {
             margin: 25px 10px;
             width: calc(33% - 20px);
             display: inline-block;
-        } 
+        }
     }
 
 </style>
