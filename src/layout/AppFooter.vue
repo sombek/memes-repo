@@ -30,7 +30,8 @@
             <div class="row align-items-center justify-content-md-between">
                 <div class="col-md-6">
                     <div class="copyright">
-
+                        نسخة رقم ١.٠
+                        <br>
                         :تم إستخدام قوالب جاهزة لإعداد الصفحة مجهزة من قبل
                         <br>
                         <a href="https://www.creative-tim.com" target="_blank" rel="noopener">Creative Tim</a> & <a href="https://www.binarcode.com" target="_blank" rel="noopener">Binar Code</a>
