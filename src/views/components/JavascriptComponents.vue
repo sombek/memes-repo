@@ -6,7 +6,6 @@
                 <div v-for="image of images" :key="image" class="imageCard">
                     <small class="d-block text-uppercase font-weight-bold mb-4"> </small>
                     <img v-lazy="image" alt="Raised image"
-                         @click="copy($event)"
                          class="img-fluid rounded shadow-lg">
                 </div>
             </div>
@@ -22,34 +21,6 @@ import Axios from 'axios'
 import xmlToJSON from '../../assets/xml2json'
 
 export default {
-	methods: {
-		copy(hey) {
-			function toDataUrl(url, callback) {
-				var xhr = new XMLHttpRequest()
-				xhr.onload = function() {
-					var reader = new FileReader()
-					reader.onloadend = function() {
-						callback(reader.result)
-					}
-					reader.readAsDataURL(xhr.response)
-				}
-				xhr.open('GET', url)
-				xhr.responseType = 'blob'
-				xhr.send()
-			}
-
-			toDataUrl(hey.target.src, function(myBase64) {
-				alert(navigator.clipboard ? 'yes navigator.clipboard' : 'no navigator.clipboard')
-				navigator.clipboard.writeText(myBase64).then(function() {
-					alert('copied')
-				}, function() {
-					alert('no copied')
-				}).catch(() => {
-					alert('error')
-				})
-			})
-		}
-	},
 	created() {
 		document.onpaste = (evt) => {
 			const dT = evt.clipboardData || window.clipboardData
